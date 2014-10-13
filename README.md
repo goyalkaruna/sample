@@ -1,4 +1,4 @@
-Lab 2 for cmpe 275.
+Lab 2 for cmpe 275 by team Binary.
 
 sample
 ======
