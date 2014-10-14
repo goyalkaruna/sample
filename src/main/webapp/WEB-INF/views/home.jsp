@@ -1,14 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-	<title>Home</title>
+<title>Welcome</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
-
-<P>  The time on the server is ${dateDisplay}. </P>
+<h2>Welcome to Court Reservation System</h2>
+"${element}"
 </body>
 </html>

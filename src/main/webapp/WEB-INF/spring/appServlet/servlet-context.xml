@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans:beans xmlns="http://www.springframework.org/schema/mvc"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:beans="http://www.springframework.org/schema/beans"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
-   <beans:bean name="/home" class="com.my275assign.sample.HomeController"></beans:bean>
-   <beans:bean name="/profile" class="edu.sjsu.cmpe275.lab2.ProfileController"></beans:bean>
-	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="/WEB-INF/views/" />
-		<beans:property name="suffix" value=".jsp" />
-	</beans:bean>
-	
 	<context:component-scan base-package="edu.sjsu.cmpe275.lab2" />
 	
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
 	
-	
-</beans:beans>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/views/" />
+	<property name="suffix" value=".jsp" />
+	</bean>
+
+   <bean name="profileservice" class="edu.sjsu.cmpe275.lab2.ProfileServiceImpl">
+   	<property name="profile">
+	<map>
+	<entry>
+	<key>
+	<value>01</value>
+	</key>
+	<bean class="edu.sjsu.cmpe275.lab2.Profile">
+		<property name="id" value="01" />
+		<property name="firstname" value="01" />
+		<property name="lastname" value="01" />
+		<property name="email" value="01" />
+		<property name="address" value="01" />
+		<property name="organization" value="01" />
+		<property name="aboutMyself" value="01" />
+	</bean>
+	</entry>
+	</map>
+	</property>
+   </bean>
+   
+   <bean name = "profile" class = "edu.sjsu.cmpe275.lab2.Profile"></bean>
+
+</beans>

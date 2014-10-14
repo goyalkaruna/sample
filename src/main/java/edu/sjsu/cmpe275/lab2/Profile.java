@@ -51,6 +51,16 @@ public class Profile {
 		this.aboutMyself = aboutMyself;
 	}
     
-    
+	@Override
+	public String toString(){
+		
+		return "id: " + this.id + "\n" + 
+				"firstname: " + this.firstname + "\n" +
+				"lastname: " + this.lastname + "\n" +
+				"email: " + this.email + "\n" +
+				"address: " + this.address + "\n" +
+				"organization: " + this.organization + "\n" +
+				"aboutMyself: " + this.aboutMyself;
+	}
     
 }
