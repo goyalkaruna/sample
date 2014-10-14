@@ -80,8 +80,17 @@ public class ProfileController {
 	   public String postProfile(@ModelAttribute Profile profile,Model model) {
 		   
 		   System.out.println("before add: " + proSer.getHashmap().size());
+		 
 		   proSer.storeProfile(profile);
+		      model.addAttribute("id", profile.getId());
+		      model.addAttribute("firstname", profile.getFirstname());
+		      model.addAttribute("lastname", profile.getLastname());
+		      model.addAttribute("email", profile.getEmail());
+		      model.addAttribute("address", profile.getAddress());
+		      model.addAttribute("organization", profile.getOrganization());
+		      model.addAttribute("aboutMyself", profile.getAboutMyself());
+		
 		   System.out.println("after added: " + proSer.getHashmap().size());
-		   return "profile";
+		   return "results";
 	   }
 }
